@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Spring Micro - UI</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body>
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <h1>Accede con tu correo</h1>
+                        <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                            <div class="form-group">
+                                Usuario
+								<input type="text" name="usuario" id="txtUsuario" class="form-control" >
+								
+								Clave
+								<input type="password" name="password" id="txtClave" class="form-control" >
+								
+								Correo
+                                <input type="text" name="email" id="email" class="form-control" placeholder="usuario@ejemplo.com">
+                            </div>
+                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Ver Info">
+                        </form>
+                        <hr>
+                    </div>
+                </div>
+                <!-- /.col-xs-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Spring Micro Demo © - 2017</p>
+                    <p><strong><a href="http://www.mitocodenetwork.com/premium/" target="_blank">MitoCode Network</a></strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

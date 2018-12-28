@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+	<title>Spring Boot - Ejercicio Notas</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"></link>
+	<link type="text/css" href="css/estilo.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" crossorigin="anonymous"></script>
+	<script src="js/nota.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+
+			<div sec:authorize="isAuthenticated()">
+				| Bienvenido : <span sec:authentication="name"></span> | Roles: <span sec:authentication="principal.authorities"></span> | <span th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}"> Administrador </span>
+
+				<form th:action="@{j_spring_security_logout}" method="post" id="logoutForm">
+					<input id="csrfToken" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> 
+					<input id="csrfHeader" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.headerName}" />
+				</form>
+				<script>
+					function formSubmit() {
+						document.getElementById("logoutForm").submit();
+					}
+				</script>
+				<a href="javascript:formSubmit()"> Cerrar Sesión</a>
+				<!-- <a th:href="@{/j_spring_security_logout}">Cerrar Sesión</a>  -->
+			</div>
+
+
+			<select id="cboPersona" class="form-control"></select>
+
+			<div class="col-md-6">
+				<div class="todolist not-done">
+					<h1>Por Hacer</h1>
+					<input type="text" class="form-control add-todo" placeholder="Agregar tarea por hacer" />
+					<button id="checkAll" class="btn btn-success">Marcar todas como hechas</button>
+					<hr />
+					<ul id="sortable" class="list-unstyled">
+						<li class="ui-state-default">
+							<div class="checkbox">
+								<label> <input type="checkbox" value="" />Ver tutos Java 7 SE Avanzado MitoCode
+								</label>
+							</div>
+						</li>
+						<li class="ui-state-default">
+							<div class="checkbox">
+								<label> <input type="checkbox" value="" />Ver tutos Java 8 MitoCode
+								</label>
+							</div>
+						</li>
+						<li class="ui-state-default">
+							<div class="checkbox">
+								<label> <input type="checkbox" value="" />Ver tutos de JavaScript (ES7) MitoCode
+								</label>
+							</div>
+						</li>
+					</ul>
+					<div class="todo-footer">
+						<strong><span class="count-todos"></span></strong> Items restantes
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<div class="todolist">
+					<h1>Terminados</h1>
+					<ul id="done-items" class="list-unstyled">
+						<li>Ver los tutos de mitocode de spring del canal.
+							<button class="remove-item btn btn-default btn-xs pull-right">
+								<span class="glyphicon glyphicon-remove"></span>
+							</button>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

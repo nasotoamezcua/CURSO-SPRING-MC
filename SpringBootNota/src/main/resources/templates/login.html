@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Logeo - Spring Boot App Nota</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous"></link>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="login" class="active" id="login-form-link">Login</a>
+							</div>
+						</div>
+						<hr />
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							
+							<p class="alert alert-danger" th:if="${error}" th:text="${error}"></p>
+							<p class="alert alert-success" th:if="${msg}" th:text="${msg}"></p>																																					
+							
+							<div class="col-lg-12">
+								<form id="login-form" th:action="@{j_spring_security_check}"
+									method="post" role="form" style="display: block;">
+									<div class="form-group">
+										<input type="text" name="usuario" id="username" tabindex="1" autofocus="autofocus"
+											class="form-control" th:placeholder="Username" value=""></input>
+									</div>
+									<div class="form-group">
+										<input type="password" name="clave" id="password" tabindex="2"
+											class="form-control" th:placeholder="Password"></input>
+									</div>									
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit"
+													value="Login" tabindex="4" class="form-control btn btn-primary"></input>
+													<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

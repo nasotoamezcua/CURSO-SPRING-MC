@@ -1,0 +1,58 @@
+Aplicaciones JAVA-SPRING (Back-End)
+
+Crear el archivo: Procfile
+El cual contiene lo siguiente:web: java -Dserver.port=$PORT -jar target/nombre-del-jar.jar
+Crear el archivo: .gitignore
+
+GIT
+1.- Crear un repositorio local: git init
+2.- Agregar el archivo .gitignore
+3.- Agregar archivos: git add .
+4.- Verificar el estatus: git status
+5.- Realizar el commit: git commit -m "Inicial"
+HEROKU
+6.- Login en heroku: heroku login
+7.- Crear la aplicacion en el repositprio de Heroku: heroku apps: create nombre-de-la-aplicacion
+8.- Subir el codigo de la aplicacion al repositorio de heroku: git push heroku master
+9.- Ejecutar o abrir la aplicacion: heroku open
+SUBIR LA DATA EN HEROKU Y POSGRES
+10.- Subir la data (BD): heroku pg:psql
+11.- Realizar una consulta de prueba: select * from persona;
+12.- Para cargar la informacion solo es necesario hacer consultas de insercion en las tablas: insert into tabala values(?,?,?);
+SUBIR CAMBIOS Y ACTUALIZACIONES
+13.- Verificar cambios: git status
+14.- Agregar cambios: git add .
+15.- Verificar cambios: git status
+16.- Realizar el commit: git commit -m "Segundo"
+17.- Subir cambios a Heroku: git push heroku master
+18.- 9.- Ejecutar o abrir la aplicacion: heroku open
+CLONAR REPOSITORIOS
+19.- En el nombre del proyecto settings se muestra la url para clonar: git clone https://git.heroku.com/spring-micro-nasa.git
+
+Aplicaciones HTML y JS (Front-End)
+Crear el archivo: Index.php:
+El cual contiene lo siguiente: <?php header( 'Location: /index.html' ) ;  ?>
+GIT
+1.- Crear un repositorio local: git init
+2.- Verificar el estatus: git status
+3.- Agregar archivos: git add .
+4.- Verificar el estatus: git status
+5.- Realizar el commit: git commit -m "Inicial"
+HEROKU
+6.- Login en heroku: heroku login
+7.- Crear la aplicacion en el repositprio de Heroku: heroku apps: create nombre-de-la-aplicacion
+8.- Subir el codigo de la aplicacion al repositorio de heroku: git push heroku master
+9.- Ejecutar o abrir la aplicacion: heroku open
+SUBIR CAMBIOS Y ACTUALIZACIONES
+10.- Verificar cambios: git status
+11.- Agregar cambios: git add .
+12.- Verificar cambios: git status
+13.- Realizar el commit: git commit -m "Segundo"
+14.- Subir cambios a Heroku: git push heroku master
+15.- 9.- Ejecutar o abrir la aplicacion: heroku open
+
+
+
+
+
+

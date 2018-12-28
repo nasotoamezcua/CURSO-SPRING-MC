@@ -1,0 +1,29 @@
+server:
+  port: 9999
+  
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/micro
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: secret
+      authorized-grant-types: password,client_credentials,authorization_code,refresh_token
+      scope: read,write
+      
